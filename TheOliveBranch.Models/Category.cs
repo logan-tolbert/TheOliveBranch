@@ -6,12 +6,11 @@ namespace TheOliveBranch.Models
 {
     public class Category
     {
-        [Key]
-        [Required]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(TypeName = "INT", Order = 1)]
-        [DisplayName("Category Id")]
         public int Id { get; set; }
 
+        [Required]
         [StringLength(25)]
         [Column(TypeName = "NVARCHAR", Order = 2)]
         [DisplayName("Category Id")]
@@ -20,5 +19,7 @@ namespace TheOliveBranch.Models
         [DisplayName("Display Order")]
         [Column(TypeName = "INT", Order = 3)]
         public int DisplayOrder { get; set; }
+        // Navigation property to related MenuItems
+        public virtual ICollection<MenuItem> MenuItems { get; set; }
     }
 }
