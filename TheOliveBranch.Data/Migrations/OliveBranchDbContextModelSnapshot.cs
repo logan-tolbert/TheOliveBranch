@@ -2,20 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OliveBranch.Web.Data;
+using TheOliveBranch.Data;
 
 #nullable disable
 
 namespace OliveBranch.Web.Migrations
 {
     [DbContext(typeof(OliveBranchDbContext))]
-    [Migration("20250103071116_AddOliveBranchDbAndAddCategoriesToDb")]
-    partial class AddOliveBranchDbAndAddCategoriesToDb
+    partial class OliveBranchDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

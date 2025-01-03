@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OliveBranch.Web.Data;
-using OliveBranch.Web.Models;
+using TheOliveBranch.Data;
+using TheOliveBranch.Models;
 
-namespace OliveBranch.Web.Pages.Categories
+namespace OliveBranch.Web.Pages.Admin.Categories
 {
     public class DeleteModel : PageModel
     {

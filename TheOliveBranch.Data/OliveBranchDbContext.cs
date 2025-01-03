@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OliveBranch.Web.Models;
+using TheOliveBranch.Models;
 
-namespace OliveBranch.Web.Data
+namespace TheOliveBranch.Data
 {
     public class OliveBranchDbContext : DbContext
     {

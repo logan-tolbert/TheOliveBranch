@@ -20,4 +20,15 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TheOliveBranch.Data\TheOliveBranch.Data.csproj" />
+    <ProjectReference Include="..\TheOliveBranch.Models\TheOliveBranch.Models.csproj" />
+    <ProjectReference Include="..\TheOliveBranch.Utility\TheOliveBranch.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Customer\" />
+	<Folder Include="Pages\Admin\" />
+  </ItemGroup>
+
 </Project>
