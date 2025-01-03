@@ -1,13 +1,14 @@
 ﻿@page
-@model OliveBranch.Web.Pages.Categories.CreateModel
+@model OliveBranch.Web.Pages.Categories.EditModel
 @{
 
 }
 <form method="post">
+    
     <div>
         <div class="border p-3 mt-4 mb-4">
             <div class="row pb-2">
-                <h2>Create Category</h2>
+                <h2>Edit Category</h2>
             </div>
         </div>
         <fieldset>
@@ -21,11 +22,13 @@
                 <input class="form-control" style="width: 50%;" type="text" asp-for="@Model.Category.CategoryName" name="CategoryName" />
                 <span asp-validation-for="Category.CategoryName"></span>
             </div>
-            <button class="btn btn-success" type="submit">Create</button>
+            <button class="btn btn-success" type="submit">Update</button>
+            <a asp-page="Index" class="btn btn-secondary">Back to List</a>
         </fieldset>
     </div>
 </form>
-@section Scripts{
+
+@section Scripts {
     @{
         <partial name="_ValidationScriptsPartial" />
     }
