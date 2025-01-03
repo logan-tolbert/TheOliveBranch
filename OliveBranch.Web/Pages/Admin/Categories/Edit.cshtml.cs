@@ -1,24 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OliveBranch.Web.Data;
-using OliveBranch.Web.Models;
+using TheOliveBranch.Data;
+using TheOliveBranch.Models;
 
-namespace OliveBranch.Web.Pages.Categories
+namespace OliveBranch.Web.Pages.Admin.Categories
 {
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly OliveBranchDbContext _db;
-
-        [BindProperty]
-        public Category Category { get; set; }
-        public CreateModel(OliveBranchDbContext db)
+        public EditModel(OliveBranchDbContext db)
         {
             _db = db;
         }
 
-        
-        public void OnGet()
+        [BindProperty]
+        public Category Category { get; set; }
+
+        public void OnGet(int id)
         {
+            Category = _db.Categories.Find(id);
         }
 
         public async Task<IActionResult> OnPost()
@@ -34,7 +34,7 @@ namespace OliveBranch.Web.Pages.Categories
                 return RedirectToPage("Index");
             }
 
-            await _db.Categories.AddAsync(Category);
+            _db.Categories.Update(Category);
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
         }

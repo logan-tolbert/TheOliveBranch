@@ -26,4 +26,9 @@
     <ProjectReference Include="..\TheOliveBranch.Utility\TheOliveBranch.Utility.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Customer\" />
+	<Folder Include="Pages\Admin\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using OliveBranch.Web.Data;
+using TheOliveBranch.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<OliveBranchDbContext>(options => options.UseSqlServer(

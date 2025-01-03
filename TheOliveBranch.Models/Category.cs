@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OliveBranch.Web.Models
+namespace TheOliveBranch.Models
 {
     public class Category
     {
