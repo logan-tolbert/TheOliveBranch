@@ -1,0 +1,26 @@
+﻿@page
+@model OliveBranch.Web.Pages.Categories.CreateModel
+@{
+
+}
+<form method="post">
+    <div>
+        <div class="border p-3 mt-4 mb-4">
+            <div class="row pb-2">
+                <h2>Create Category</h2>
+            </div>
+        </div>
+        <fieldset>
+            <div class="mb-3">
+                <label class="pb-1" asp-for="@Model.Category.DisplayOrder">Display Order: </label>
+                <input class="form-control" style="width: 50%;" type="text" asp-for="@Model.Category.DisplayOrder" name="DisplayOrder" />
+            </div>
+            <div class="mb-3">
+                <label class="pb-1" asp-for="@Model.Category.DisplayOrder">Category Name: </label>
+                <input class="form-control" style="width: 50%;" type="text" asp-for="@Model.Category.DisplayOrder" name="CategoryName" />
+            </div>
+            <button class="btn btn-success" type="submit">Create</button>
+        </fieldset>
+    </div>
+
+</form>

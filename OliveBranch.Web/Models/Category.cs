@@ -12,7 +12,7 @@ namespace OliveBranch.Web.Models
 
         [Column(TypeName = "NVARCHAR", Order = 2)]
         [StringLength(25)]
-        public string ItemName { get; set; }
+        public string CategoryName { get; set; }
 
         [Column(TypeName = "INT", Order = 3)]
         public int DisplayOrder { get; set; }

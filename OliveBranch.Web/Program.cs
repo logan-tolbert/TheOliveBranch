@@ -2,10 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using OliveBranch.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddRazorPages();
 builder.Services.AddDbContext<OliveBranchDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddRazorPages();
+
 
 var app = builder.Build();
 

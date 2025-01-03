@@ -30,15 +30,15 @@ namespace OliveBranch.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(3);
-
-                    b.Property<string>("ItemName")
+                    b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("NVARCHAR")
                         .HasColumnOrder(2);
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(3);
 
                     b.HasKey("Id");
 

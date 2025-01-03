@@ -1,0 +1,36 @@
+﻿@page
+@model OliveBranch.Web.Pages.Categories.IndexModel
+@{
+    ViewData["Title"] = "Categories";
+}
+<h1>Categories</h1>
+<a asp-page="Create" class="btn btn-success">New Category</a>
+<div class="container py-5">
+   
+   <div class="row">
+       
+        <div class="col-lg-7 mx-auto rounded shadow">
+            
+            <div class="table-responsive ">
+                <table class="table table-fixed">
+                   <thead>
+                        <tr>
+                           <th scope="col" class="col-3">Category</th>
+                           <th scope="col" class="col-3">Display Order</th>
+                        </tr>
+                  </thead>
+              <tbody>
+                @foreach(var category in Model.Categories)
+                {
+                  <tr>
+                    <td class="col-3">@category.CategoryName</td>
+                    <td class="col-3">@category.DisplayOrder</td>
+                  </tr>
+                }               
+              </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
+

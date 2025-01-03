@@ -11,8 +11,8 @@ using OliveBranch.Web.Data;
 namespace OliveBranch.Web.Migrations
 {
     [DbContext(typeof(OliveBranchDbContext))]
-    [Migration("20250103010541_AddOliveBranchDbAndCategoriesToDb")]
-    partial class AddOliveBranchDbAndCategoriesToDb
+    [Migration("20250103071116_AddOliveBranchDbAndAddCategoriesToDb")]
+    partial class AddOliveBranchDbAndAddCategoriesToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,15 +33,15 @@ namespace OliveBranch.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(3);
-
-                    b.Property<string>("ItemName")
+                    b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("NVARCHAR")
                         .HasColumnOrder(2);
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(3);
 
                     b.HasKey("Id");
 

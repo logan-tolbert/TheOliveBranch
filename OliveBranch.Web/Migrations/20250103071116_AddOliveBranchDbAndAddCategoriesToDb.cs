@@ -5,7 +5,7 @@
 namespace OliveBranch.Web.Migrations
 {
     /// <inheritdoc />
-    public partial class AddOliveBranchDbAndCategoriesToDb : Migration
+    public partial class AddOliveBranchDbAndAddCategoriesToDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace OliveBranch.Web.Migrations
                 {
                     Id = table.Column<int>(type: "INT", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemName = table.Column<string>(type: "NVARCHAR(25)", maxLength: 25, nullable: false),
+                    CategoryName = table.Column<string>(type: "NVARCHAR(25)", maxLength: 25, nullable: false),
                     DisplayOrder = table.Column<int>(type: "INT", nullable: false)
                 },
                 constraints: table =>
