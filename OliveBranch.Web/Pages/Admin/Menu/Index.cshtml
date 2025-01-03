@@ -1,0 +1,24 @@
+﻿@page
+@model OliveBranch.Web.Pages.Admin.Menu.IndexModel
+@{
+}
+
+<div class="row col-md-6">
+@foreach(var item in Model.Menu)
+{
+
+    <div class="card m-3 shadow-sm" style="width: 15rem;">
+        <img src="https://placehold.co/300x150" class="card-img-top mt-3" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <p class="card-text">@item.Description</p>
+         
+        </div>
+            <div class=" btn-group mb-3">
+                <a href="#" class="btn btn-success form-control">Edit</a><span>&nbsp;</span>
+                <a href="#" class="btn btn-danger form-control">Delete</a>
+            </div>
+
+    </div>
+}
+</div>

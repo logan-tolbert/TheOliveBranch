@@ -13,13 +13,11 @@ namespace TheOliveBranch.Models
         [Required]
         [StringLength(25)]
         [Column(TypeName = "NVARCHAR", Order = 2)]
-        [DisplayName("Category Id")]
+        [DisplayName("Category Name")]
         public string CategoryName { get; set; } = null!;
 
         [DisplayName("Display Order")]
         [Column(TypeName = "INT", Order = 3)]
         public int DisplayOrder { get; set; }
-        // Navigation property to related MenuItems
-        public virtual ICollection<MenuItem> MenuItems { get; set; }
     }
 }

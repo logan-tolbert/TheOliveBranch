@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -29,12 +30,8 @@ namespace TheOliveBranch.Models
         [Column(TypeName = "decimal(10,2)", Order = 4)]
         public decimal Price { get; set; }
 
-        // Foreign Key property
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
-
-        // Navigation property to the parent Category
-        public virtual Category Category { get; set; }
-
+        [DisplayName("Display Order")]
+        [Column(TypeName = "INT", Order = 5)]
+        public int DisplayOrder { get; set; }
     }
 }
