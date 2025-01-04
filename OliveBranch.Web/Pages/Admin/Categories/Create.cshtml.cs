@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using TheOliveBranch.Contracts;
 using TheOliveBranch.Data;
 using TheOliveBranch.Models;
 
@@ -7,13 +8,13 @@ namespace OliveBranch.Web.Pages.Admin.Categories
 {
     public class CreateModel : PageModel
     {
-        private readonly OliveBranchDbContext _db;
+        private readonly ICategoryRepository _dbCategory;
 
         [BindProperty]
         public Category Category { get; set; }
-        public CreateModel(OliveBranchDbContext db)
+        public CreateModel(ICategoryRepository dbCategory)
         {
-            _db = db;
+            _dbCategory = dbCategory;
         }
 
         
@@ -34,8 +35,8 @@ namespace OliveBranch.Web.Pages.Admin.Categories
                 return RedirectToPage("Index");
             }
 
-            await _db.Categories.AddAsync(Category);
-            await _db.SaveChangesAsync();
+            _dbCategory.Add(Category);
+            _dbCategory.Save();
             return RedirectToPage("Index");
         }
     }

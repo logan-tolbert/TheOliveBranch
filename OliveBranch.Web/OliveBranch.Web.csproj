@@ -21,8 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TheOliveBranch.Contracts\TheOliveBranch.Contracts.csproj" />
     <ProjectReference Include="..\TheOliveBranch.Data\TheOliveBranch.Data.csproj" />
     <ProjectReference Include="..\TheOliveBranch.Models\TheOliveBranch.Models.csproj" />
+    <ProjectReference Include="..\TheOliveBranch.Repo\TheOliveBranch.Repo.csproj" />
     <ProjectReference Include="..\TheOliveBranch.Utility\TheOliveBranch.Utility.csproj" />
   </ItemGroup>
 
