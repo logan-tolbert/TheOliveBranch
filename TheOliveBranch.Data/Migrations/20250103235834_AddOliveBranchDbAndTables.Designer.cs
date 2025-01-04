@@ -8,11 +8,11 @@ using TheOliveBranch.Data;
 
 #nullable disable
 
-namespace OliveBranch.Web.Migrations
+namespace TheOliveBranch.Data.Migrations
 {
     [DbContext(typeof(OliveBranchDbContext))]
-    [Migration("20250103071116_AddOliveBranchDbAndAddCategoriesToDb")]
-    partial class AddOliveBranchDbAndAddCategoriesToDb
+    [Migration("20250103235834_AddOliveBranchDbAndTables")]
+    partial class AddOliveBranchDbAndTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace OliveBranch.Web.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("OliveBranch.Web.Models.Category", b =>
+            modelBuilder.Entity("TheOliveBranch.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,6 +46,40 @@ namespace OliveBranch.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("TheOliveBranch.Models.MenuItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INT")
+                        .HasColumnOrder(1);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("NVARCHAR")
+                        .HasColumnOrder(3);
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(5);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("NVARCHAR")
+                        .HasColumnOrder(2);
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(10,2)")
+                        .HasColumnOrder(4);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MenuItems");
                 });
 #pragma warning restore 612, 618
         }
