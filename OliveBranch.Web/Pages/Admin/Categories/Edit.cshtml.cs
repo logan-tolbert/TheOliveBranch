@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using TheOliveBranch.Contracts;
 using TheOliveBranch.Data;
 using TheOliveBranch.Models;
 
@@ -7,18 +8,17 @@ namespace OliveBranch.Web.Pages.Admin.Categories
 {
     public class EditModel : PageModel
     {
-        private readonly OliveBranchDbContext _db;
-        public EditModel(OliveBranchDbContext db)
-        {
-            _db = db;
-        }
-
+        private readonly IUnitOfWork _unitOfWork;
         [BindProperty]
         public Category Category { get; set; }
+        public EditModel(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
         public void OnGet(int id)
         {
-            Category = _db.Categories.Find(id);
+            Category = _unitOfWork.Category.GetFirstOrDefault(c => c.Id == id);
         }
 
         public async Task<IActionResult> OnPost()
@@ -34,8 +34,8 @@ namespace OliveBranch.Web.Pages.Admin.Categories
                 return RedirectToPage("Index");
             }
 
-            _db.Categories.Update(Category);
-            await _db.SaveChangesAsync();
+            _unitOfWork.Category.Update(Category);
+            _unitOfWork.Category.Save();
             return RedirectToPage("Index");
         }
     }

@@ -11,7 +11,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<OliveBranchDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 #endregion
 
 var app = builder.Build();

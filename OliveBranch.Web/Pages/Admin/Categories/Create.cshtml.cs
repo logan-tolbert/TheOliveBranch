@@ -8,13 +8,13 @@ namespace OliveBranch.Web.Pages.Admin.Categories
 {
     public class CreateModel : PageModel
     {
-        private readonly ICategoryRepository _dbCategory;
+        private readonly IUnitOfWork _unitOfWork;
 
         [BindProperty]
         public Category Category { get; set; }
-        public CreateModel(ICategoryRepository dbCategory)
+        public CreateModel(IUnitOfWork unitOfWork)
         {
-            _dbCategory = dbCategory;
+            _unitOfWork = unitOfWork;
         }
 
         
@@ -35,8 +35,8 @@ namespace OliveBranch.Web.Pages.Admin.Categories
                 return RedirectToPage("Index");
             }
 
-            _dbCategory.Add(Category);
-            _dbCategory.Save();
+            _unitOfWork.Category.Add(Category);
+            _unitOfWork.Category.Save();
             return RedirectToPage("Index");
         }
     }
