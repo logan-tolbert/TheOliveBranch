@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TheOliveBranch.Contracts\TheOliveBranch.Contracts.csproj" />
     <ProjectReference Include="..\TheOliveBranch.Data\TheOliveBranch.Data.csproj" />
+    <ProjectReference Include="..\TheOliveBranch.Models\TheOliveBranch.Models.csproj" />
   </ItemGroup>
 
 </Project>
