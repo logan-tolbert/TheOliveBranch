@@ -2,7 +2,16 @@
 @model OliveBranch.Web.Pages.Admin.Menu.IndexModel
 @{
 }
+<div class="row pt-4">
+    <div class="col-6">
+        <h1>Menu Items</h1>
 
+    </div>
+    <div class="col-6">
+        <a asp-page="./Create" class="btn btn-success">Create Menu Item</a>
+    </div>
+
+</div>
 <div class="row col-md-6">
 @foreach(var item in Model.Menu)
 {
@@ -14,10 +23,11 @@
             <p class="card-text">@item.Description</p>
          
         </div>
-            <div class=" btn-group mb-3">
-                <a href="#" class="btn btn-success form-control">Edit</a><span>&nbsp;</span>
-                <a href="#" class="btn btn-danger form-control">Delete</a>
+            <div class="btn-row-group w-75" role="group">
+                <a asp-page="#" asp-route-id="@item.Id" class="btn btn-success mx-2">Edit</a>
+                <a asp-page="#" asp-route-id="@item.Id" class=" btn btn-danger mx-2">Delete</a>
             </div>
+
 
     </div>
 }

@@ -1,11 +1,9 @@
-﻿
-using TheOliveBranch.Models;
+﻿using TheOliveBranch.Models;
 
-namespace TheOliveBranch.Contracts
+namespace TheOliveBranch.Contracts;
+
+public interface ICategoryRepository : IRepository<Category>
 {
-    public interface ICategoryRepository : IRepository<Category>
-    {
-        void Update(Category category);
-        void Save();
-    }
+    void Update(Category category);
+    void Save();
 }
