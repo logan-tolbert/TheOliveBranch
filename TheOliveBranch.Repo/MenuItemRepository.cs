@@ -24,5 +24,8 @@ public class MenuItemRepository : Repository<MenuItem>, IMenuItemRepository
         record.Description = menuItem.Description;
         record.Price = menuItem.Price;
         record.DisplayOrder = menuItem.DisplayOrder;
+        record.FoodTypeId = menuItem.FoodTypeId;
+        record.CategoryId = menuItem.CategoryId;
+        record.Image = (record != null) ? menuItem.Image : record.Image;
     }
 }
