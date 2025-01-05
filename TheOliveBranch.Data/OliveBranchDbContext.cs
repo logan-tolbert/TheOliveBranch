@@ -9,8 +9,8 @@ namespace TheOliveBranch.Data
         {
 
         }
-
-        public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<FoodType> FoodType { get; set; }
     }
 }
