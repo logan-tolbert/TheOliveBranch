@@ -24,14 +24,25 @@ namespace TheOliveBranch.Models
         [StringLength(255)]
         [Column(TypeName = "NVARCHAR", Order = 3)]
         public string Description { get; set; } = null!;
+        [Required]
+        [Column(TypeName = "NVARCHAR(255)", Order = 4)]
+        public string Image { get; set; } = null!;
 
         [Required]
         [Range(0, 50)]
-        [Column(TypeName = "decimal(10,2)", Order = 4)]
+        [Column(TypeName = "decimal(10,2)", Order = 5)]
         public decimal Price { get; set; }
 
         [DisplayName("Display Order")]
-        [Column(TypeName = "INT", Order = 5)]
+        [Column(TypeName = "INT", Order = 6)]
         public int DisplayOrder { get; set; }
+        [Column(TypeName = "INT", Order = 7)]
+        public int FoodTypeId { get; set; }
+        [ForeignKey("FoodTypeId")]
+        public virtual FoodType FoodType { get; set; }
+        [Column(TypeName = "INT", Order = 8)]
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual Category Category {get;set;}
     }
 }

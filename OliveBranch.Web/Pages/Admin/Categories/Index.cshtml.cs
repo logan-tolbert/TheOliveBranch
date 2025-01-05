@@ -1,20 +1,21 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using TheOliveBranch.Data;
+using TheOliveBranch.Contracts;
 using TheOliveBranch.Models;
 
 namespace OliveBranch.Web.Pages.Admin.Categories
 {
     public class IndexModel : PageModel
     {
-        private readonly OliveBranchDbContext _db;
+        private readonly IUnitOfWork _unitOfWork;
         public IEnumerable<Category>Categories { get; set; }
-        public IndexModel(OliveBranchDbContext db)
+        public IndexModel(IUnitOfWork unitOfWork)
         {
-            _db = db;
+            _unitOfWork = unitOfWork;
         }
+
         public void OnGet()
         {
-            Categories = _db.Categories;
+            Categories = _unitOfWork.Category.GetAll();
         }
     }
 }

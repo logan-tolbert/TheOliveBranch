@@ -11,7 +11,7 @@ using TheOliveBranch.Data;
 namespace TheOliveBranch.Data.Migrations
 {
     [DbContext(typeof(OliveBranchDbContext))]
-    [Migration("20250103235834_AddOliveBranchDbAndTables")]
+    [Migration("20250105091541_AddOliveBranchDbAndTables")]
     partial class AddOliveBranchDbAndTables
     {
         /// <inheritdoc />
@@ -48,6 +48,26 @@ namespace TheOliveBranch.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("TheOliveBranch.Models.FoodType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INT")
+                        .HasColumnOrder(1);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("NVARCHAR")
+                        .HasColumnOrder(2);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FoodType");
+                });
+
             modelBuilder.Entity("TheOliveBranch.Models.MenuItem", b =>
                 {
                     b.Property<int>("Id")
@@ -57,6 +77,10 @@ namespace TheOliveBranch.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(8);
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -65,7 +89,16 @@ namespace TheOliveBranch.Data.Migrations
 
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("INT")
-                        .HasColumnOrder(5);
+                        .HasColumnOrder(6);
+
+                    b.Property<int>("FoodTypeId")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(7);
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR(255)")
+                        .HasColumnOrder(4);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -75,11 +108,34 @@ namespace TheOliveBranch.Data.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(10,2)")
-                        .HasColumnOrder(4);
+                        .HasColumnOrder(5);
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("FoodTypeId");
+
                     b.ToTable("MenuItems");
+                });
+
+            modelBuilder.Entity("TheOliveBranch.Models.MenuItem", b =>
+                {
+                    b.HasOne("TheOliveBranch.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TheOliveBranch.Models.FoodType", "FoodType")
+                        .WithMany()
+                        .HasForeignKey("FoodTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("FoodType");
                 });
 #pragma warning restore 612, 618
         }

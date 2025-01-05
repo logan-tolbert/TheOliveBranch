@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using TheOliveBranch.Contracts;
 using TheOliveBranch.Data;
 using TheOliveBranch.Models;
 
@@ -12,33 +13,31 @@ namespace OliveBranch.Web.Pages.Admin.Menu
 {
     public class CreateModel : PageModel
     {
-        private readonly OliveBranchDbContext _db;
+        private readonly IUnitOfWork _unitOfWork;
         [BindProperty]
         public MenuItem MenuItem { get; set; } = default!;
-        public CreateModel(OliveBranchDbContext db)
+        public CreateModel(IUnitOfWork unitOfWork)
         {
-            _db = db;
+            _unitOfWork = unitOfWork;
         }
 
         public void OnGet()
         {
-        //ViewData["CategoryId"] = new SelectList(_db.Categories, "Id", "CategoryName");
-        //    return Page();
+      
         }
 
       
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _db.MenuItems.Add(MenuItem);
-            await _db.SaveChangesAsync();
-
+            _unitOfWork.MenuItem.Add(MenuItem);
+            _unitOfWork.MenuItem.Save();
             return RedirectToPage("./Index");
         }
     }
