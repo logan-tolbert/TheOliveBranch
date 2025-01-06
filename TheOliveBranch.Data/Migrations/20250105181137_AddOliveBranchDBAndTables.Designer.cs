@@ -11,8 +11,8 @@ using TheOliveBranch.Data;
 namespace TheOliveBranch.Data.Migrations
 {
     [DbContext(typeof(OliveBranchDbContext))]
-    [Migration("20250105091541_AddOliveBranchDbAndTables")]
-    partial class AddOliveBranchDbAndTables
+    [Migration("20250105181137_AddOliveBranchDBAndTables")]
+    partial class AddOliveBranchDBAndTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

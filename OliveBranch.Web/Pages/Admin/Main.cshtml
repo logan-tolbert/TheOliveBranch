@@ -1,0 +1,18 @@
+﻿@page
+@model OliveBranch.Web.Pages.Admin.MainModel
+@{
+}
+<div class="text-center">
+    <h1 >Administration</h1>
+    <p>@DateTime.Now</p>
+    <a asp-page="./Menu/Index">Menu Items</a>
+</div>
+
+
+<h2>Categories</h2>
+<ul>
+@foreach(var c in Model.Categories)
+{
+    <li>@c.CategoryName</li>
+}
+</ul>

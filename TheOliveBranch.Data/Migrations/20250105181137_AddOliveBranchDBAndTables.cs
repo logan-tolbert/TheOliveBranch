@@ -5,7 +5,7 @@
 namespace TheOliveBranch.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class AddOliveBranchDbAndTables : Migration
+    public partial class AddOliveBranchDBAndTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

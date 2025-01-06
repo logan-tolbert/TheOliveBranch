@@ -21,24 +21,30 @@
          <input type="number" data-currency="USD" asp-for="MenuItem.Price" class="form-control" id="MenuItem.Price">
         
     </div>
+    <div class="col-md-6">
+
+        <label asp-for="MenuItem.DisplayOrder" class="form-label">Display Order:</label>
+        <input type="number" data-currency="USD" asp-for="MenuItem.DisplayOrder" class="form-control" id="MenuItem.DisplayOrder">
+
+    </div>
     <div class="col-12">
         <label asp-for="MenuItem.Description" class="form-label">Description</label>
-        <input type="text" class="form-control" asp-for="MenuItem.Description" name="MenuItem.Description" id="MenuItem.Description" placeholder="1234 Main St">
+        <input type="text" class="form-control" asp-for="MenuItem.Description" name="MenuItem.Description" id="MenuItem.Description">
     </div>
     <div class="col-md-6">
         <label asp-for="MenuItem.Image" class="form-label">City</label>
-        <input type="file" class="form-control" name="MenuItem.Image" name="MenuItem.Image" id="MenuItem.Image">
+        <input type="file" asp-for="MenuItem.Image" class="form-control" name="MenuItem.Image" name="MenuItem.Image" id="MenuItem.Image">
     </div>
     <div class="row">
         <div class="col-4">
             <label asp-for="MenuItem.CategoryId" class="form-label">Categories</label>
-            <select asp-for="MenuItem.CategoryId" asp-items="Model.Categories" id="Model.Categories" name="Model.Categories" class="form-select">
+            <select asp-for="MenuItem.CategoryId" asp-items="Model.Categories" id="MenuItem.CategoryId" name="MenuItem.CategoryId" class="form-select">
                 <option selected>- Select Category -</option>
             </select>
         </div>
         <div class="col-4">
             <label asp-for="MenuItem.FoodTypeId" class="form-label">Food Types</label>
-            <select asp-for="MenuItem.FoodTypeId" asp-items="Model.FoodTypes" id="Model.FoodTypes" name="Model.FoodTypes" class="form-select">
+            <select asp-for="MenuItem.FoodTypeId" asp-items="Model.FoodTypes" id="MenuItem.FoodTypeId" name="MenuItem.FoodTypeId" class="form-select">
                 <option disabled selected>- Select type -</option>
             </select>
         </div>
