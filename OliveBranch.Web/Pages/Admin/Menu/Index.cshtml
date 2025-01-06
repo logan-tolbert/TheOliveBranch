@@ -8,7 +8,7 @@
 
     </div>
     <div class="col-6">
-        <a asp-page="./Create" class="btn btn-success">Create Menu Item</a>
+        <a asp-page="./Upsert" class="btn btn-success">Create Menu Item</a>
     </div>
 
 </div>
@@ -24,8 +24,8 @@
          
         </div>
             <div class="btn-row-group w-75" role="group">
-                <a asp-page="#" asp-route-id="@item.Id" class="btn btn-success mx-2">Edit</a>
-                <a asp-page="#" asp-route-id="@item.Id" class=" btn btn-danger mx-2">Delete</a>
+                <a asp-page="./Upsert" asp-route-id=@item.Id class="btn btn-success mx-2">Edit</a>
+                <a asp-page="#" asp-route-id="@item.Id"  class=" btn btn-danger mx-2">Delete</a>
             </div>
 
 

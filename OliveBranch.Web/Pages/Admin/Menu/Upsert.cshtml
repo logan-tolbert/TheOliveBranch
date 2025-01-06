@@ -1,12 +1,13 @@
-﻿@page
+﻿@page "/Upsert/{id?}"
 @model OliveBranch.Web.Pages.Admin.Menu.UpsertModel
 @{
 }
 <form method="post" enctype="multipart/form-data" class="row g-3">
+    <input hidden asp-for="MenuItem.Id" />
     <div class="border pt-3 mt-4">
         <div class="row pb-2">
             <h2 class="text-primary pl-3">
-                @(Model.MenuItem.Id != 0 ? "Edit" : "Create") Create Menu Item
+                @(Model.MenuItem.Id != 0 ? "Edit" : "Create") Menu Item
             </h2>
         </div>
     </div>
@@ -16,10 +17,8 @@
         <input type="text" asp-for="MenuItem.Name" class=" form-control" name="MenuItem.Name">
     </div>
     <div class="col-md-6">
-        
         <label asp-for="MenuItem.Price" class="form-label">Price</label>
          <input type="number" data-currency="USD" asp-for="MenuItem.Price" class="form-control" id="MenuItem.Price">
-        
     </div>
     <div class="col-md-6">
 
@@ -32,8 +31,9 @@
         <input type="text" class="form-control" asp-for="MenuItem.Description" name="MenuItem.Description" id="MenuItem.Description">
     </div>
     <div class="col-md-6">
-        <label asp-for="MenuItem.Image" class="form-label">City</label>
-        <input type="file" asp-for="MenuItem.Image" class="form-control" name="MenuItem.Image" name="MenuItem.Image" id="MenuItem.Image">
+        <label asp-for="MenuItem.Image" class="form-label">Image:</label>
+        <input type="file" asp-for="MenuItem.Image" class="form-control" name="MenuItem.Image" name="MenuItem.Image" id="MenuItem.Image" required>
+
     </div>
     <div class="row">
         <div class="col-4">
@@ -51,6 +51,6 @@
     </div>
 
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Create</button>
     </div>
 </form>

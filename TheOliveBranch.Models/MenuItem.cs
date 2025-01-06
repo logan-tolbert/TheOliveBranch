@@ -24,7 +24,7 @@ namespace TheOliveBranch.Models
         [StringLength(255)]
         [Column(TypeName = "NVARCHAR", Order = 3)]
         public string Description { get; set; } = null!;
-        [Required]
+        [Required(ErrorMessage = "A valid image must be provided to create a new menu item.")]
         [Column(TypeName = "NVARCHAR(255)", Order = 4)]
         public string Image { get; set; } = null!;
 
