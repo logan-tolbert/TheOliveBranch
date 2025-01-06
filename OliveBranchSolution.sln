@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOliveBranch.Contracts", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOliveBranch.Repo", "TheOliveBranch.Repo\TheOliveBranch.Repo.csproj", "{ADDE024E-317E-4BA1-B543-ABEC0F71657B}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TheOliveBranchDB", "TheOliveBranchDB\TheOliveBranchDB.sqlproj", "{512E2356-56C1-4ECD-8B88-75C8D00CE1E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,12 @@ Global
 		{ADDE024E-317E-4BA1-B543-ABEC0F71657B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADDE024E-317E-4BA1-B543-ABEC0F71657B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADDE024E-317E-4BA1-B543-ABEC0F71657B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512E2356-56C1-4ECD-8B88-75C8D00CE1E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512E2356-56C1-4ECD-8B88-75C8D00CE1E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512E2356-56C1-4ECD-8B88-75C8D00CE1E4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{512E2356-56C1-4ECD-8B88-75C8D00CE1E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512E2356-56C1-4ECD-8B88-75C8D00CE1E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512E2356-56C1-4ECD-8B88-75C8D00CE1E4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
