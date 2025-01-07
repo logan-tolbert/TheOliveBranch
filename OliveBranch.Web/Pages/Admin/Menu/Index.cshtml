@@ -1,0 +1,34 @@
+﻿@page
+@model OliveBranch.Web.Pages.Admin.Menu.IndexModel
+@{
+}
+<div class="row pt-4">
+    <div class="col-6">
+        <h1>Menu Items</h1>
+
+    </div>
+    <div class="col-6">
+        <a asp-page="./Upsert" class="btn btn-success">Create Menu Item</a>
+    </div>
+
+</div>
+<div class="row col-md-6">
+@foreach(var item in Model.Menu)
+{
+
+    <div class="card m-3 shadow-sm" style="width: 15rem;">
+        <img src="https://placehold.co/300x150" class="card-img-top mt-3" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <p class="card-text">@item.Description</p>
+         
+        </div>
+            <div class="btn-row-group w-75" role="group">
+                <a asp-page="./Upsert" asp-route-id=@item.Id class="btn btn-success mx-2">Edit</a>
+                <a asp-page="#" asp-route-id="@item.Id"  class=" btn btn-danger mx-2">Delete</a>
+            </div>
+
+
+    </div>
+}
+</div>

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OliveBranch.Web.Models;
+using TheOliveBranch.Models;
 
-namespace OliveBranch.Web.Data
+namespace TheOliveBranch.Data
 {
     public class OliveBranchDbContext : DbContext
     {
@@ -9,7 +9,8 @@ namespace OliveBranch.Web.Data
         {
 
         }
-
         public DbSet<Category> Categories { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<FoodType> FoodType { get; set; }
     }
 }

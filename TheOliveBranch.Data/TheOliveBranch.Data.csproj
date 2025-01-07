@@ -1,19 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>33614eb0-4714-4769-9073-3bdea730db0b</UserSecretsId>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TheOliveBranch.Contracts\TheOliveBranch.Contracts.csproj" />
-    <ProjectReference Include="..\TheOliveBranch.Data\TheOliveBranch.Data.csproj" />
-    <ProjectReference Include="..\TheOliveBranch.Models\TheOliveBranch.Models.csproj" />
-    <ProjectReference Include="..\TheOliveBranch.Repo\TheOliveBranch.Repo.csproj" />
-    <ProjectReference Include="..\TheOliveBranch.Utility\TheOliveBranch.Utility.csproj" />
-  </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
@@ -28,7 +20,7 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\menu-items\" />
+    <ProjectReference Include="..\TheOliveBranch.Models\TheOliveBranch.Models.csproj" />
   </ItemGroup>
 
 </Project>

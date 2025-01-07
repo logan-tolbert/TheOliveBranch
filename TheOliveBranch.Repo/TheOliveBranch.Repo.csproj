@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TheOliveBranch.Contracts\TheOliveBranch.Contracts.csproj" />
+    <ProjectReference Include="..\TheOliveBranch.Data\TheOliveBranch.Data.csproj" />
+    <ProjectReference Include="..\TheOliveBranch.Models\TheOliveBranch.Models.csproj" />
+  </ItemGroup>
+
+</Project>

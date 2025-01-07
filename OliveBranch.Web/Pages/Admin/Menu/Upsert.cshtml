@@ -1,0 +1,56 @@
+﻿@page "/Upsert/{id?}"
+@model OliveBranch.Web.Pages.Admin.Menu.UpsertModel
+@{
+}
+<form method="post" enctype="multipart/form-data" class="row g-3">
+    <input hidden asp-for="MenuItem.Id" />
+    <div class="border pt-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">
+                @(Model.MenuItem.Id != 0 ? "Edit" : "Create") Menu Item
+            </h2>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="MenuItem.Name" class="form-label">Name</label>
+        <input type="text" asp-for="MenuItem.Name" class=" form-control" name="MenuItem.Name">
+    </div>
+    <div class="col-md-6">
+        <label asp-for="MenuItem.Price" class="form-label">Price</label>
+         <input type="number" data-currency="USD" asp-for="MenuItem.Price" class="form-control" id="MenuItem.Price">
+    </div>
+    <div class="col-md-6">
+
+        <label asp-for="MenuItem.DisplayOrder" class="form-label">Display Order:</label>
+        <input type="number" data-currency="USD" asp-for="MenuItem.DisplayOrder" class="form-control" id="MenuItem.DisplayOrder">
+
+    </div>
+    <div class="col-12">
+        <label asp-for="MenuItem.Description" class="form-label">Description</label>
+        <input type="text" class="form-control" asp-for="MenuItem.Description" name="MenuItem.Description" id="MenuItem.Description">
+    </div>
+    <div class="col-md-6">
+        <label asp-for="MenuItem.Image" class="form-label">Image:</label>
+        <input type="file" asp-for="MenuItem.Image" class="form-control" name="MenuItem.Image" name="MenuItem.Image" id="MenuItem.Image" required>
+
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label asp-for="MenuItem.CategoryId" class="form-label">Categories</label>
+            <select asp-for="MenuItem.CategoryId" asp-items="Model.Categories" id="MenuItem.CategoryId" name="MenuItem.CategoryId" class="form-select">
+                <option selected>- Select Category -</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label asp-for="MenuItem.FoodTypeId" class="form-label">Food Types</label>
+            <select asp-for="MenuItem.FoodTypeId" asp-items="Model.FoodTypes" id="MenuItem.FoodTypeId" name="MenuItem.FoodTypeId" class="form-select">
+                <option disabled selected>- Select type -</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
